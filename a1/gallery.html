@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConnect - Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 rounded">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pets.html">Browse Pets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="add.html">Add Pet</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+        <h1>Pet Gallery</h1>
+            <!-- Status of Pets --> 
+              <div class="mb-3">
+                <select onchange="filterPets(this.value)">
+                    <option value="">All</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                  </select>
+              </div>
+
+              <div class="row">
+            
+                <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Dog">
+                <h3>Buddy</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/1.jpg"
+                    alt="Buddy" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$250.00</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Cat">
+                <h3>Whiskers</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/2.jpg"
+                    alt="Whiskers" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$150.00
+                </p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Dog">
+                <h3>Max</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/3.jpg"
+                    alt="Max" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$200</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Cat">
+                <h3>Luna</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/4.jpg"
+                    alt="Luna" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$180.00
+                </p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Bird">
+                <h3>Charlie</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/5.jpg"
+                    alt="Charlie" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$120.00
+                </p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Dog">
+                <h3>Bella</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/6.jpg"
+                    alt="Bella" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$220.00</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Cat">
+                <h3>Oliver</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/7.jpg"
+                    alt="Oliver" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$200.00</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-center"  data-status="Dog">
+                <h3>Rocky</h3>
+                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/8.jpg"
+                    alt="Rocky" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <p>$100.00</p>
+            </div>
+            
+        </div>
+        </main>
+        <!-- Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <img id="modalImage" class="img-fluid" src="assets/images/pets/1.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center bg-light py-3">
+            <div class="footer-copyright text-center py-3">&copy; 
+                2026 s4166097. Connection pets with loving homes.
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
