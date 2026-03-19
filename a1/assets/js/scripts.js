@@ -46,4 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Filtering system
+const statusFilter = document.getElementById("filter");
+const speciesFilter = document.getElementById("speciesFilter");
+const pets = document.querySelectorAll(".pet-card");
+
+if (statusFilter && speciesFilter) {
+    function filterPets() {
+        const statusValue = statusFilter.value;
+        const speciesValue = speciesFilter.value;
+
+        pets.forEach(pet => {
+            const petStatus = pet.getAttribute("data-status");
+            const petSpecies = pet.getAttribute("data-species");
+
+            const show =
+                (statusValue === "all" || petStatus === statusValue) &&
+                (speciesValue === "all" || petSpecies === speciesValue);
+
+            pet.style.display = show ? "block" : "none";
+        });
+    }
+
+    statusFilter.addEventListener("change", filterPets);
+    speciesFilter.addEventListener("change", filterPets);
+}
+
+
 });
+

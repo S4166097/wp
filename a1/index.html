@@ -30,8 +30,9 @@
         </nav>
         <main>
 
-            <div id="petCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-        
+            <div class="rounded overflow-hidden position-relative mb-5">
+                <div id="petCarousel" class="carousel slide" data-bs-ride="carousel">
+                
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#petCarousel" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#petCarousel" data-bs-slide-to="1"></button>
@@ -42,15 +43,14 @@
                 <div class="carousel-inner">
         
                     <div class="carousel-item active">
-                        <img src="assets/images/pets/5.jpg" class="d-block w-100" alt="Charlie">
-        
+                        <img src="assets/images/pets/5.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Charlie">
                         <div class="carousel-caption">
                             <h3>Charlie</h3>
                         </div>
                     </div>
         
                     <div class="carousel-item">
-                        <img src="assets/images/pets/1.jpg" class="d-block w-100" alt="Buddy">
+                        <img src="assets/images/pets/1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Buddy">
         
                         <div class="carousel-caption">
                             <h3>Buddy</h3>
@@ -58,7 +58,7 @@
                     </div>
         
                     <div class="carousel-item">
-                        <img src="assets/images/pets/2.jpg" class="d-block w-100" alt="Whiskers">
+                        <img src="assets/images/pets/2.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Whiskers">
         
                         <div class="carousel-caption">
                             <h3>Whiskers</h3>
@@ -66,15 +66,13 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img src="assets/images/pets/4.jpg" class="d-block w-100" alt="Luna">
+                        <img src="assets/images/pets/4.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Luna">
         
                         <div class="carousel-caption">
                             <h3>Luna</h3>
                         </div>
                     </div>
-        
-                </div>
-        
+                    </div>           
                 <button class="carousel-control-prev" type="button" data-bs-target="#petCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
@@ -82,7 +80,8 @@
                 <button class="carousel-control-next" type="button" data-bs-target="#petCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </button>
-        
+            
+            </div>
             </div>
         
             <h2 class="mb-4">Recently Added Pets</h2>
