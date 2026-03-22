@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             img.addEventListener('click', function () {
                 modalImage.src = this.src;
                 modalImage.alt = this.alt;
+                modalTitle.textContent = this.alt;
             });
         });
     }
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Filtering system
 const statusFilter = document.getElementById("filter");
 const speciesFilter = document.getElementById("speciesFilter");
-const pets = document.querySelectorAll(".pet-card");
+const pets = document.querySelectorAll("[data-status]");
 
 if (statusFilter && speciesFilter) {
     function filterPets() {

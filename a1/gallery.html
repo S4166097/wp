@@ -6,31 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetConnect - Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 rounded">
-            <ul class="navbar-nav">
+        <nav class="navbar navbar-expand-sm navbar-dark mb-3 rounded px-3">
+    
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="material-icons me-2">pets</span>
+                <span class="fw-bold">PetConnect</span>
+            </a>
+        
+            <ul class="navbar-nav ms-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">
+                        <span class="material-icons nav-icon">home</span>
+                        Home
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pets.html">Browse Pets</a>
+                    <a class="nav-link" href="pets.html">
+                        <span class="material-icons nav-icon">list</span>
+                        Browse Pets
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="gallery.html">Gallery</a>
+                    <a class="nav-link active" href="gallery.html">
+                        <span class="material-icons nav-icon">photo_library</span>
+                        Gallery
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="add.html">Add Pet</a>
+                    <a class="nav-link" href="add.html">
+                        <span class="material-icons nav-icon">add_circle</span>
+                        Add Pet
+                    </a>
                 </li>
             </ul>
+        
         </nav>
         <main>
         <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Pet Gallery</h1>
+            <h1 class="gradient-text">Pet Gallery</h1>
             <!-- Status of Pets -->  
             <div class="d-flex gap-2">
                 <select id="filter" class="form-select w-auto">
@@ -51,70 +71,104 @@
 
               <div class="row">
             
-                <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="dog">
-                <h3>Buddy</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/1.jpg"
-                    alt="Buddy" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$250.00</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="cat">
-                <h3>Whiskers</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/2.jpg"
-                    alt="Whiskers" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$150.00
-                </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="dog">
-                <h3>Max</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/3.jpg"
-                    alt="Max" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$200</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="pending" data-species="cat">
-                <h3>Luna</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/4.jpg"
-                    alt="Luna" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$180.00
-                </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="bird">
-                <h3>Charlie</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/5.jpg"
-                    alt="Charlie" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$120.00
-                </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="dog">
-                <h3>Bella</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/6.jpg"
-                    alt="Bella" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$220.00</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="cat">
-                <h3>Oliver</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/7.jpg"
-                    alt="Oliver" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$200.00</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center pet-card"  data-status="available" data-species="dog">
-                <h3>Rocky</h3>
-                <img class="img-fluid img-thumbnail gallery-img" src="assets/images/pets/8.jpg"
-                    alt="Rocky" data-bs-toggle="modal" data-bs-target="#imageModal">
-                <p>$100.00</p>
-            </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="dog">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/1.jpg" class="img-fluid gallery-img"
+                             alt="Buddy" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Buddy</h5>
+                        <span class="tag tag-dog">Dog</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$250.00</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="cat">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/2.jpg" class="img-fluid gallery-img"
+                             alt="Whiskers" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Whiskers</h5>
+                        <span class="tag tag-cat">Cat</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$150.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="dog">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/3.jpg" class="img-fluid gallery-img"
+                             alt="Max" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Max</h5>
+                        <span class="tag tag-dog">Dog</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$150.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="pending" data-species="cat">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/4.jpg" class="img-fluid gallery-img"
+                             alt="Luna" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Luna</h5>
+                        <span class="tag tag-cat">Cat</span>
+                        <span class="tag tag-available">Pending</span>
+                        <p>$250.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="bird">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/5.jpg" class="img-fluid gallery-img"
+                             alt="Charlie" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Charlie</h5>
+                        <span class="tag tag-bird">Bird</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$120.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="dog">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/6.jpg" class="img-fluid gallery-img"
+                             alt="Bella" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Bella</h5>
+                        <span class="tag tag-dog">Dog</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$220.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="cat">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/7.jpg" class="img-fluid gallery-img"
+                             alt="Oliver" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Oliver</h5>
+                        <span class="tag tag-dog">Cat</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$200.00</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="dog">
+                    <div class="pet-card">
+                        <img src="assets/images/pets/8.jpg" class="img-fluid gallery-img"
+                             alt="Rocky" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <h5>Rocky</h5>
+                        <span class="tag tag-dog">Dog</span>
+                        <span class="tag tag-available">Available</span>
+                        <p>$180.00</p>
+                    </div>
+                </div>
             
         </div>
         </main>
         <!-- Modal -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="imageModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-md">
-                <div class="modal-content">
+                <div class="modal-content bg-dark text-white border-0">
+        
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="modalTitle"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+        
                     <div class="modal-body text-center">
-                        <img id="modalImage" class="img-fluid">
+                        <img id="modalImage" class="img-fluid rounded">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+        
                 </div>
             </div>
         </div>
