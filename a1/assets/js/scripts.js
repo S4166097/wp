@@ -4,14 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //Modal for the Gallery for when you click on the image and get to see a bigger version of the adorable AI generated pet
     const galleryImages = document.querySelectorAll('.gallery-img');
     const modalImage = document.getElementById('modalImage');
-
+    const modalText = document.getElementById('modalText');    
     if (galleryImages.length && modalImage) {
         galleryImages.forEach(img => {
             img.addEventListener('click', function () {
                 modalImage.src = this.src;
                 modalImage.alt = this.alt;
-                modalTitle.textContent = this.alt;
-            });
+                modalText.textContent = this.alt;            });
         });
     }
 
