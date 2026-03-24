@@ -33,6 +33,10 @@ h1 {
     transform: translateY(-5px);
 }
 
+.pet-name {
+    font-size: 1.25rem;
+}
+
 /* ===== Images ===== */
 .gallery-img {
     border-radius: 12px;

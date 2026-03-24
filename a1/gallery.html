@@ -70,12 +70,12 @@
         </div>
 
               <div class="row">
-            
+                <h2 class="visually-hidden">Pet Listings</h2> <!-- Im adding this line to fix the h1>h2>h3 structuring that the html validator is making me do* -->
                 <div class="col-md-3 mb-4 pet-card" data-status="available" data-species="dog">
                     <div class="pet-card">
                         <img src="assets/images/pets/1.jpg" class="img-fluid gallery-img"
                              alt="Buddy" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Buddy</h5>
+                        <h3>Buddy</h3>
                         <span class="tag tag-dog">Dog</span>
                         <span class="tag tag-available">Available</span>
                         <p>$250.00</p>
@@ -86,7 +86,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/2.jpg" class="img-fluid gallery-img"
                              alt="Whiskers" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Whiskers</h5>
+                        <h3>Whiskers</h3>
                         <span class="tag tag-cat">Cat</span>
                         <span class="tag tag-available">Available</span>
                         <p>$150.00</p>
@@ -96,7 +96,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/3.jpg" class="img-fluid gallery-img"
                              alt="Max" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Max</h5>
+                        <h3>Max</h3>
                         <span class="tag tag-dog">Dog</span>
                         <span class="tag tag-available">Available</span>
                         <p>$150.00</p>
@@ -106,7 +106,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/4.jpg" class="img-fluid gallery-img"
                              alt="Luna" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Luna</h5>
+                        <h3>Luna</h3>
                         <span class="tag tag-cat">Cat</span>
                         <span class="tag tag-available">Pending</span>
                         <p>$250.00</p>
@@ -116,7 +116,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/5.jpg" class="img-fluid gallery-img"
                              alt="Charlie" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Charlie</h5>
+                        <h3>Charlie</h3>
                         <span class="tag tag-bird">Bird</span>
                         <span class="tag tag-available">Available</span>
                         <p>$120.00</p>
@@ -126,7 +126,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/6.jpg" class="img-fluid gallery-img"
                              alt="Bella" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Bella</h5>
+                        <h3>Bella</h3>
                         <span class="tag tag-dog">Dog</span>
                         <span class="tag tag-available">Available</span>
                         <p>$220.00</p>
@@ -136,7 +136,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/7.jpg" class="img-fluid gallery-img"
                              alt="Oliver" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Oliver</h5>
+                        <h3>Oliver</h3>
                         <span class="tag tag-dog">Cat</span>
                         <span class="tag tag-available">Available</span>
                         <p>$200.00</p>
@@ -146,7 +146,7 @@
                     <div class="pet-card">
                         <img src="assets/images/pets/8.jpg" class="img-fluid gallery-img"
                              alt="Rocky" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <h5>Rocky</h5>
+                        <h3>Rocky</h3>
                         <span class="tag tag-dog">Dog</span>
                         <span class="tag tag-available">Available</span>
                         <p>$180.00</p>
@@ -162,15 +162,15 @@
                 <div class="modal-content bg-dark text-white border-0">
         
                     <div class="modal-header border-0">
-                        <h5 class="modal-title d-flex align-items-center gap-2">
+                        <h3 class="modal-title d-flex align-items-center gap-2">
                             <span class="material-icons">image</span>
                             <span id="modalText"></span>
-                        </h5>
+                        </h3>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
         
                     <div class="modal-body text-center">
-                        <img id="modalImage" class="img-fluid rounded">
+                        <img id="modalImage" src="#" alt="Pet image" class="img-fluid rounded">
                     </div>
         
                 </div>
@@ -181,7 +181,6 @@
                 2026 s4166097. Connection pets with loving homes.
             </div>
         </footer>
-    </div>
     <script src="assets/js/scripts.js"></script>
 </body>
 
