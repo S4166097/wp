@@ -1,3 +1,14 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "petconnect", 3307);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM pets";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,32 +26,32 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark px-4">
     
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <span class="material-icons me-2">pets</span>
                 <span class="fw-bold">PetConnect</span>
             </a>
         
             <ul class="navbar-nav ms-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
+                    <a class="nav-link active" href="index.php">
                         <span class="material-icons nav-icon">home</span>
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pets.html">
+                    <a class="nav-link" href="pets.php">
                         <span class="material-icons nav-icon">list</span>
                         Browse Pets
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="gallery.html">
+                    <a class="nav-link" href="gallery.php">
                         <span class="material-icons nav-icon">photo_library</span>
                         Gallery
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="add.html">
+                    <a class="nav-link" href="add.php">
                         <span class="material-icons nav-icon">add_circle</span>
                         Add Pet
                     </a>
