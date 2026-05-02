@@ -36,7 +36,7 @@ $result = $conn->query($sql);
                          data-species="<?php echo strtolower($row['species']); ?>">
 
                      <div class="pet-card">
-                           <img src="assets/images/<?php echo $row['image']; ?>"
+                           <img src="assets/images/pets/<?php echo $row['image']; ?>"
                                class="img-fluid gallery-img"
                                 alt="<?php echo $row['name']; ?>"
                                 data-bs-toggle="modal"
@@ -59,7 +59,7 @@ $result = $conn->query($sql);
     <?php endwhile; ?>
 <?php else: ?>
     <p>No pets available.</p>
-<?php endif; ?>
+<?php endif; ?> 
 </div>
             
         </div>

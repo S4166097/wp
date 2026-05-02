@@ -38,13 +38,17 @@ $result = $conn->query($sql);
                     <?php if ($result->num_rows > 0): ?>
                         <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo $row['name']; ?></td>
+                            <td>
+                                <a href="details.php?id=<?php echo $row['id']; ?>">
+                                    <?php echo $row['name']; ?>
+                                </a>
+                            </td>
                                 <td><?php echo $row['species']; ?></td>
                                 <td><?php echo $row['breed']; ?></td>
                                 <td><?php echo $row['size']; ?></td>
                                 <td>$<?php echo number_format($row['adoption_fee'], 2); ?></td>
                                 <td>
-                                    <img src="assets/images/<?php echo $row['image']; ?>" width="80">
+                                    <img src="assets/images/pets/<?php echo $row['image']; ?>" width="80">
                                 </td>
                             </tr>
                         <?php endwhile; ?>
