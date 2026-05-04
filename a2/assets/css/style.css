@@ -1,8 +1,12 @@
 /* ===== Fonts ===== */
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
     color: #f9fafb;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 h1, h2, h3, h4, h5 {
@@ -125,10 +129,6 @@ footer {
     object-fit: cover;
 }
 
-body {
-    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
-}
-
 .material-icons.text-danger {
     color: #ec4899;
 }
@@ -183,4 +183,16 @@ body {
     font-size: 20px;
     line-height: 1;
     vertical-align: middle;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-gradient {
+    background: linear-gradient(to right, #ffffff, #0b1a2b);
+    color: #ccc;
+    font-size: 0.9rem;
 }

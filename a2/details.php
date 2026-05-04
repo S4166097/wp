@@ -27,36 +27,82 @@ $pet = $result->fetch_assoc();
 ?>
 
 <main>
-    <div class="container">
-
-        <h1 class="gradient-text"><?php echo $pet['name']; ?></h1>
-
+    <div class="container" style="max-width: 1100px;">
         <div class="row">
-            <div class="col-md-6">
+
+            <!-- photo of pet -->
+            <div class="col-md-6 mb-4">
                 <img src="assets/images/pets/<?php echo $pet['image']; ?>" 
-                     class="img-fluid rounded">
+                     class="img-fluid rounded shadow">
             </div>
 
+            <!-- wording stuff -->
             <div class="col-md-6">
 
-                <p><strong>Species:</strong> <?php echo $pet['species']; ?></p>
-                <p><strong>Breed:</strong> <?php echo $pet['breed']; ?></p>
-                <p><strong>Age:</strong> <?php echo $pet['age_years']; ?> years, <?php echo $pet['age_months']; ?> months</p>
-                <p><strong>Gender:</strong> <?php echo $pet['gender']; ?></p>
-                <p><strong>Size:</strong> <?php echo $pet['size']; ?></p>
-                <p><strong>Status:</strong> <?php echo $pet['status']; ?></p>
-                <p><strong>Adoption Fee:</strong> $<?php echo number_format($pet['adoption_fee'], 2); ?></p>
+                <h1 class="gradient-text mb-2"><?php echo $pet['name']; ?></h1>
 
-                <p><strong>Description:</strong><br>
-                <?php echo $pet['description']; ?></p>
+                <!-- Tags -->
+                <div class="mb-3">
+                    <span class="tag tag-<?php echo strtolower($pet['species']); ?>">  <!-- 'strtolower' is to make the tags lowercase, ensuring the that css works*  -->
+                        <?php echo $pet['species']; ?>
+                    </span>
 
-                <p><strong>Health Info:</strong><br>
-                <?php echo $pet['health_info']; ?></p>
+                    <span class="tag tag-<?php echo strtolower($pet['status']); ?>">
+                        <?php echo $pet['status']; ?>
+                    </span>
+                </div>
+
+                <!-- white table thingy -->
+                <div class="card shadow-sm p-3 mb-4">
+
+                    <div class="row border-bottom py-2">
+                        <div class="col-6 fw-bold">Breed:</div>
+                        <div class="col-6 text-end"><?php echo $pet['breed']; ?></div>
+                    </div>
+
+                    <div class="row border-bottom py-2">
+                        <div class="col-6 fw-bold">Age:</div>
+                        <div class="col-6 text-end">
+                            <?php echo $pet['age_years']; ?> years, <?php echo $pet['age_months']; ?> months
+                        </div>
+                    </div>
+
+                    <div class="row border-bottom py-2">
+                        <div class="col-6 fw-bold">Gender:</div>
+                        <div class="col-6 text-end"><?php echo $pet['gender']; ?></div>
+                    </div>
+
+                    <div class="row border-bottom py-2">
+                        <div class="col-6 fw-bold">Size:</div>
+                        <div class="col-6 text-end"><?php echo $pet['size']; ?></div>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col-6 fw-bold">Adoption Fee:</div>
+                        <div class="col-6 text-end">
+                            <strong>$<?php echo number_format($pet['adoption_fee'], 2); ?></strong> 
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- description-->
+                <h5 class="fw-bold">
+                    <span class="material-icons me-1" style="color:#7c6cf0;">description</span>                   
+                    Description
+                </h5>
+                <p class="mb-4"><?php echo $pet['description']; ?></p>
+
+                <!-- health -->
+                <h5 class="fw-bold">
+                    <span class="material-icons me-1 text-success">health_and_safety</span>
+                    Health Information
+                </h5>
+                <p><?php echo $pet['health_info']; ?></p>
 
             </div>
 
         </div>
-
     </div>
 </main>
 

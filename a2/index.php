@@ -2,7 +2,7 @@
 include 'includes/db_connect.inc';
 include 'includes/header.inc';
 include 'includes/nav.inc';
-$sql = "SELECT * FROM pets";
+$sql = "SELECT * FROM pets ORDER BY id DESC LIMIT 4";
 $result = $conn->query($sql);
 ?>
 
@@ -72,66 +72,26 @@ $result = $conn->query($sql);
             </h2>
         
             <div class="row">
+            <?php if ($result->num_rows > 0): ?>
+                <?php while($row = $result->fetch_assoc()): ?>
         
-                <div class="col-md-3 mb-4">
+                    <div class="col-md-3 mb-4">
                     <div class="pet-card">
-                        <img src="assets/images/pets/1.jpg" class="img-fluid" alt="Buddy">
-                        <h3>Buddy</h3>
-                    <p>$250.00</p>
-                    </div>
-                </div>
-        
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/2.jpg" class="img-fluid" alt="Whiskers">
-                        <h3>Whiskers</h3>
-                    <p>$150.00</p>
-                    </div>
-                </div>
+                <img src="assets/images/pets/<?php echo $row['image']; ?>" class="img-fluid" alt="<?php echo $row['name']; ?>">
                 
-
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/3.jpg" class="img-fluid" alt="Max">
-                        <h3>Max</h3>
-                    <p>$200.00</p>
-                    </div>
-                </div>
-        
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/5.jpg" class="img-fluid" alt="Charlie">
-                        <h3>Charlie</h3>
-                    <p>$120.00</p>
+                <h3><?php echo $row['name']; ?></h3>
+                
+                <p>$<?php echo number_format($row['adoption_fee'], 2); ?></p>
                     </div>
                 </div>
 
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/6.jpg" class="img-fluid" alt="Bella">
-                        <h3>Bella</h3>
-                    <p>$220.00</p>
-                    </div>
-                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p>No pets found.</p>
+        <?php endif; ?>
 
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/7.jpg" class="img-fluid" alt="Oliver">
-                        <h3>Oliver</h3>
-                    <p>$200.00</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 mb-4">
-                    <div class="pet-card">
-                        <img src="assets/images/pets/8.jpg" class="img-fluid" alt="Rocky">
-                        <h3>Rocky</h3>
-                    <p>$180.00</p>
-                    </div>
-                </div>
-            </div>
-            </div>
-        
-        </main>
+        </div>         
+        </div>
+    </main>
        
         <?php include 'includes/footer.inc'; ?>

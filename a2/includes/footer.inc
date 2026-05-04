@@ -1,4 +1,4 @@
-<footer class="text-center bg-light py-3">
+<footer class="text-center py-3 footer-gradient">
     © 2026 s4166097. Connecting pets with loving homes.
 </footer>
 
