@@ -18,28 +18,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $status = $_POST['status'];
 
     // Get uploaded image information
-    $newimageName = $_FILES['image']['name'];
+    $newImageName = $_FILES['image']['name'];
     $tempName = $_FILES['image']['tmp_name'];
 
-    $newImageName = time() . "_" . basename($newimageName);
+    $newImageName = time() . "_" . basename($newImageName);
 
     // Move uploaded image into pets image folder
     move_uploaded_file($tempName, __DIR__ . "/assets/images/pets/" . $newImageName);
     
     // SQL query to insert new pet into database
-    $sql = "INSERT INTO pets 
-    (name, species, breed, age_years, age_months, gender, size, adoption_fee, description, health_info, status, image)
-    VALUES 
-    ('$name', '$species', '$breed', '$age_years', '$age_months', '$gender', '$size', '$adoption_fee', '$description', '$health_info', '$status', '$newimageName')";
+    $stmt = $conn->prepare("INSERT INTO pets 
+(name, species, breed, age_years, age_months, gender, size, adoption_fee, description, health_info, status, image)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    // If insert works, redirect user back to pets page
-    if ($conn->query($sql) === TRUE) {
-        header("Location: pets.php?success=1");
-        exit();
-    } 
-    
-    else {
-        echo "Error: " . $conn->error;
-    }
+$stmt->bind_param(
+    "sssiiissssss", //s = string and i = integer
+    $name,
+    $species,
+    $breed,
+    $age_years,
+    $age_months,
+    $gender,
+    $size,
+    $adoption_fee,
+    $description,
+    $health_info,
+    $status,
+    $newImageName
+);
+
+if ($stmt->execute()) {
+    header("Location: pets.php?success=1");
+    exit();
+} else {
+    echo "Error: " . $stmt->error;
+}
 }
 ?>
