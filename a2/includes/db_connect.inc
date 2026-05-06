@@ -16,7 +16,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $username = "s4166097";
     $password = "nocTo2-civwoh-fepdef";
     $dbname = "s4166097";
-    $port = 3306
+    $port = 3306;
 }
 
 // Create connection
