@@ -7,7 +7,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $username = "root";
     $password = "";
     $dbname = "petconnect";
-    $port = 3307;
+    $port = 3306;
 
 } else {
 
