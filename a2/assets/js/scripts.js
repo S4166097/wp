@@ -26,13 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const file = this.files[0];
             if (!file) return;
 
-            const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+            const imageError = document.getElementById("imageError");
 
             if (!allowedTypes.includes(file.type)) {
-                alert("Please upload a JPG or PNG image.");
+
+                imageError.textContent = "Please upload a JPG or PNG image.";
+
                 this.value = "";
                 preview.classList.add("d-none");
                 return;
+
+            } else {
+
+                imageError.textContent = "";
             }
 
             const reader = new FileReader();

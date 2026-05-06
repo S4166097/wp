@@ -93,6 +93,7 @@ include 'includes/nav.inc';
                 <div class="mb-3">
                     <label class="form-label" for="image">Pet Photo*</label>
                     <input class="form-control" type="file" id="image" name="image" required>
+                    <div id="imageError" class="text-danger mt-2"></div>
                     <div class="mt-3">
                         <img id="imagePreview" src="#" alt="Image preview" class="img-fluid d-none" style="max-height:200px;"> 
                     </div>
