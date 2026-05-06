@@ -12,15 +12,14 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 } else {
 
     // TITAN SERVER
-    $servername = "talspdbdb02.int.its.rmit.edu.au";
+    $servername = "localhost";
     $username = "s4166097";
     $password = "nocTo2-civwoh-fepdef";
     $dbname = "s4166097";
-    $port = 3306;
 }
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $dbname;
 
 // Check connection
 if ($conn->connect_error) {
