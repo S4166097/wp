@@ -7,7 +7,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $username = "root";
     $password = "";
     $dbname = "petconnect";
-    $port = 3306;
+    $port = 3307;
 
 } else {
 
@@ -16,10 +16,11 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $username = "s4166097";
     $password = "nocTo2-civwoh-fepdef";
     $dbname = "s4166097";
+    $port = 3306
 }
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Check connection
 if ($conn->connect_error) {
