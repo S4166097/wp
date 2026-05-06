@@ -12,7 +12,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 } else {
 
     // TITAN SERVER
-    $servername = "localhost";
+    $servername = "127.0.0.1";
     $username = "s4166097";
     $password = "nocTo2-civwoh-fepdef";
     $dbname = "s4166097";
