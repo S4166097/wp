@@ -17,7 +17,7 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     // TITAN SERVER
     $servername = "talsprddb02.int.its.rmit.edu.au";
     $username = "s4166097";
-    $password = "tyhwad-nyvreb-cyZno0";
+    $password = "fUbJPnUGMzK4U4z";
     $dbname = "s4166097";
     $conn = new mysqli($servername, $username, $password, $dbname);
 }
