@@ -1,8 +1,30 @@
 <?php
-$conn = new mysqli("localhost", "s4166097", "tyhwad-nyvreb-cyZno0", "s4166097");
 
+// LOCAL XAMPP
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "petconnect";
+    $port = 3307;
+
+} else {
+
+    // TITAN SERVER
+    $servername = "talspdbdb02.int.its.rmit.edu.au";
+    $username = "s4166097";
+    $password = "nocTo2-civwoh-fepdef";
+    $dbname = "s4166097";
+    $port = 3306;
+}
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-    
 }
+
 ?>
