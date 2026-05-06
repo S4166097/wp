@@ -6,7 +6,7 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     // LOCAL XAMPP
     $servername = "localhost";
     $username = "root";
-    $password = "tyhwad-nyvreb-cyZno0";
+    $password = "";
     $dbname = "petconnect";
     $port = 3307;
 
@@ -17,7 +17,9 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     // TITAN SERVER
     $servername = "talsprddb02.int.its.rmit.edu.au";
     $username = "s4166097";
-    $password = "tyhwad-nyvreb-cyZno0";
+    
+    include("/home/sh7/s4166097/.htdb_pass");
+    
     $dbname = "s4166097";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
