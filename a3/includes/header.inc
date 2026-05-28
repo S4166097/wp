@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,3 +16,14 @@ session_start();
 </head>
 
 <body>
+
+<?php if(isset($_SESSION['success'])): ?>
+
+    <div class="alert alert-success text-center m-0">
+        <?php 
+            echo $_SESSION['success']; 
+            unset($_SESSION['success']);
+        ?>
+    </div>
+
+<?php endif; ?>

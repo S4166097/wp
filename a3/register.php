@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // auto-login after registration
                 $_SESSION['user_id'] = $conn->insert_id;
                 $_SESSION['username'] = $username;
-
                 header("Location: index.php");
                 exit();
             } else {
