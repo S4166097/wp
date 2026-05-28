@@ -2,6 +2,15 @@
 include 'includes/db_connect.inc';
 include 'includes/header.inc';
 include 'includes/nav.inc';
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+
+    header("Location: login.php");
+
+    exit();
+
+}
 ?>
 
         <main>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'includes/db_connect.inc';
 
 // Check if form was submitted using POST method
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $health_info = $_POST['health_info'];
     $status = $_POST['status'];
-
+    $user_id = $_SESSION['user_id'];
     // Get uploaded image information
     $newImageName = $_FILES['image']['name'];
     $tempName = $_FILES['image']['tmp_name'];
@@ -28,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // SQL query to insert new pet into database
     $stmt = $conn->prepare("INSERT INTO pets 
-(name, species, breed, age_years, age_months, gender, size, adoption_fee, description, health_info, status, image)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+(name, species, breed, age_years, age_months, gender, size, adoption_fee, description, health_info, status, image, user_id)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 $stmt->bind_param(
-    "sssiiissssss", //s = string and i = integer
+    "sssiiissssssi", //s = string and i = integer
     $name,
     $species,
     $breed,
@@ -44,7 +44,8 @@ $stmt->bind_param(
     $description,
     $health_info,
     $status,
-    $newImageName
+    $newImageName,
+    $user_id
 );
 
 if ($stmt->execute()) {
