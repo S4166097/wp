@@ -2,12 +2,7 @@
 session_start();
 include 'includes/db_connect.inc';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-$user_id = $_SESSION['user_id'];
+$user_id = $_GET['user_id'];
 
 $stmt = $conn->prepare("SELECT * FROM pets WHERE user_id = ?");
 $stmt->bind_param("i", $user_id);
@@ -21,7 +16,7 @@ include 'includes/nav.inc';
 
 <main>
     <div class="container">
-        <h1 class="gradient-text">My Pets</h1>
+        <h1 class="gradient-text">Owner's Pets</h1>
         <div class="row">
         <?php if($result->num_rows > 0): ?>
         <?php while($pet = $result->fetch_assoc()): ?>

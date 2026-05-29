@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'includes/db_connect.inc';
 include 'includes/header.inc';
 include 'includes/nav.inc';
@@ -86,6 +87,23 @@ $pet = $result->fetch_assoc();
 
                 </div>
 
+                <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $pet['user_id']): ?>
+
+                <div class="mb-4">
+
+                <a href="edit.php?id=<?php echo $pet['id']; ?>" 
+                    class="btn btn-primary">
+                    Edit
+                </a>
+
+                <a href="delete.php?id=<?php echo $pet['id']; ?>"
+                    class="btn btn-danger">
+                    Delete
+                </a>
+
+                </div>
+
+            <?php endif; ?>
                 <!-- description-->
                 <h5 class="fw-bold">
                     <span class="material-icons me-1" style="color:#7c6cf0;">description</span>                   
@@ -100,6 +118,13 @@ $pet = $result->fetch_assoc();
                 </h5>
                 <p><?php echo $pet['health_info']; ?></p>
 
+                <h5 class="fw-bold mt-4">
+                    Contact Owner
+                </h5>
+
+                <a href="owner.php?user_id=<?php echo $pet['user_id']; ?>">
+                    View Owner's Pets
+                </a>
             </div>
 
         </div>
