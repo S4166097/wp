@@ -12,11 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmPassword = $_POST['confirm_password'];
 
     if ($password !== $confirmPassword) {
-        $error = "Passwords do not match.";
+        $error = "Passwords do not match.";     
     } else {
 
         // Check if username already exists
         $checkStmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+
+        if (!$checkStmt) {
+            die("SQL Error: " . $conn->error);
+        }
         $checkStmt->bind_param("s", $username);
         $checkStmt->execute();
         $checkResult = $checkStmt->get_result();
